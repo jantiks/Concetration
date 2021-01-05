@@ -19,6 +19,7 @@ class Concentration
     func chooseCard(at index: Int) {
         flipCount += 1
         if !cards[index].isMatched {
+            
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex].identifier == cards[index].identifier {
                     scoreCount += 2
@@ -26,7 +27,10 @@ class Concentration
                     cards[index].isMatched = true
                     
                 } else {
-                    scoreCount -= 1
+                    if cards[index].wasTapped {
+                        scoreCount -= 1
+                    }
+                    
                 }
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = nil
@@ -37,11 +41,13 @@ class Concentration
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
             }
+            cards[index].wasTapped = true
         }
     }
     
     func newGame() {
         flipCount = 0
+        scoreCount = 0
         for index in cards.indices {
             cards[index].isFaceUp = false
             cards[index].isMatched = false
