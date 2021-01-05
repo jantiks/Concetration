@@ -124,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uH-Mt-su7">
-                                <rect key="frame" x="211" y="772" width="183" height="90"/>
+                                <rect key="frame" x="20" y="784" width="374" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94636863469999999" green="0.59736376999999996" blue="0.2002493739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
@@ -136,7 +136,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ5-lq-Ofw">
-                                <rect key="frame" x="20" y="772" width="183" height="90"/>
+                                <rect key="frame" x="20" y="686" width="183" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0c-OT-He4">
+                                <rect key="frame" x="211" y="686" width="183" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,6 +155,7 @@
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="aZ5-lq-Ofw" id="w98-uD-Tqu"/>
+                        <outlet property="scoreCountLabel" destination="J0c-OT-He4" id="j75-cG-kNp"/>
                         <outletCollection property="touchButtons" destination="NJV-sx-Y7s" collectionClass="NSMutableArray" id="X53-ZK-gS5"/>
                         <outletCollection property="touchButtons" destination="id5-hN-7Ts" collectionClass="NSMutableArray" id="11W-3H-nvr"/>
                         <outletCollection property="touchButtons" destination="soO-KG-YB1" collectionClass="NSMutableArray" id="prv-XA-cu4"/>
