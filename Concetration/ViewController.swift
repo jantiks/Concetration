@@ -27,6 +27,11 @@ class ViewController: UIViewController {
             updateViewFromModel()
         }
     }
+    @IBAction func newGameTapped(_ sender: Any) {
+        flipCount = 0
+        game.newGame()
+        updateViewFromModel()
+    }
     
     func updateViewFromModel() {
         for index in touchButtons.indices {
@@ -50,7 +55,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var emojiChoices = ["👻","⚽️","🚕","🎃"]
+    var emojiChoices = ["👻","⚽️","🚕","🎃","🎲","😡"]
     var emoji = [Int:String]()
     
     func emoji(for card: Card) -> String {
