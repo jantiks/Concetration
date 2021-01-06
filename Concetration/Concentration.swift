@@ -10,13 +10,14 @@ import Foundation
 
 class Concentration
 {
-    var cards = [Card]()
+    private(set) var cards = [Card]()
     
     var indexOfOneAndOnlyFaceUpCard: Int?
-    var flipCount = 0
-    var scoreCount = 0
+    private(set) var flipCount = 0
+    private(set) var scoreCount = 0
     
     func chooseCard(at index: Int) {
+        assert(cards.indices.contains(index), "Chose index which contains cards")
         flipCount += 1
         if !cards[index].isMatched {
             
@@ -56,7 +57,7 @@ class Concentration
     }
     
     init(numberOfPairsOfCards: Int) {
-        
+        assert(numberOfPairsOfCards > 0, "pairs must be more than 0")
         for _ in 0..<numberOfPairsOfCards {
             let card = Card()
             cards.append(card)
