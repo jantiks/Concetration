@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-class Concentration
+ 
+struct Concentration
 {
     private(set) var cards = [Card]()
     
@@ -16,13 +16,13 @@ class Concentration
     private(set) var flipCount = 0
     private(set) var scoreCount = 0
     
-    func chooseCard(at index: Int) {
+    mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Chose index which contains cards")
         flipCount += 1
         if !cards[index].isMatched {
             
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
                     scoreCount += 2
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
@@ -46,7 +46,7 @@ class Concentration
         }
     }
     
-    func newGame() {
+    mutating func newGame() {
         flipCount = 0
         scoreCount = 0
         for index in cards.indices {
